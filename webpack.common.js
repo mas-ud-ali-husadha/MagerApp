@@ -10,6 +10,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  performance: {
+    hints: false,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   module: {
     rules: [
       {
@@ -55,7 +63,7 @@ module.exports = {
       description: 'Mager Restaurant For You',
       background_color: '#ffffff',
       crossorigin: 'use-credentials',
-      start_url: '/index.html',
+      start_url: './index.html',
       theme_color: '#ffffff',
       icons: [
         {
