@@ -70,7 +70,7 @@ module.exports = {
     }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: './src/sw.js',
-      swDest: 'sw.js',
+      swDest: 'service-worker.js',
       maximumFileSizeToCacheInBytes: 10000000000,
     }),
   ],

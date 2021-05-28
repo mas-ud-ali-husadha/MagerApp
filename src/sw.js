@@ -4,7 +4,6 @@ import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from 'workbox-strategi
 import { ExpirationPlugin } from 'workbox-expiration/ExpirationPlugin';
 import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
 import { registerRoute } from 'workbox-routing/registerRoute';
-import 'regenerator-runtime';
 
 // eslint-disable-next-line no-restricted-globals
 precacheAndRoute(self.__WB_MANIFEST);
