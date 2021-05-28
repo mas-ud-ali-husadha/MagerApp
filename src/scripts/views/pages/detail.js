@@ -20,7 +20,7 @@ const Detail = {
     const renderResult = (results) => {
       detailItemElement.restaurant = results;
       document.querySelector('.nav__color').style.backgroundImage = `
-      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${CONFIG.BASE_IMAGE_URL}/images/large/${results.pictureId})`;
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${CONFIG.BASE_IMAGE_URL}/images/medium/${results.pictureId})`;
     };
 
     const onLoadData = async () => {

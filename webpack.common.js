@@ -1,7 +1,7 @@
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -9,14 +9,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-  },
-  performance: {
-    hints: false,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
   },
   module: {
     rules: [
@@ -43,11 +35,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
-    }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      maximumFileSizeToCacheInBytes: 600000000,
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -80,6 +67,11 @@ module.exports = {
           purpose: 'maskable',
         },
       ],
+    }),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: './src/sw.js',
+      swDest: 'sw.js',
+      maximumFileSizeToCacheInBytes: 10000000000,
     }),
   ],
 };

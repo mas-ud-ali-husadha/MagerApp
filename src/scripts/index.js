@@ -24,20 +24,11 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
+  // if ('serviceWorker' in navigator) {
+  //   navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+  //     console.log('SW registered: ', registration);
+  //   }).catch((registrationError) => {
+  //     console.log('SW registration failed: ', registrationError);
+  //   });
+  // }
 });
-// let card = "";
-// data.restaurants.forEach((data)=>{
-//     card += `<div class="card__menu">
-//                 <div class="rating">⭐️: ${data.rating}</div>
-//                 <img src="${data.pictureId}" alt="${data.pictureId}">
-//                 <div class="card__body">
-//                     <h4 class="card__name">
-//                          <div class="card__text"> ${data.name} </div>
-//                         <div class="location" >Kota ${data.city}</div>
-//                     </h4>
-//                     <p>${data.description}</p>
-//                 </div>
-//             </div>`
-// })
-
-// document.querySelector('#menu__grid').innerHTML = card

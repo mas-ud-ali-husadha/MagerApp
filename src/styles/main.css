@@ -214,7 +214,7 @@ main{
     position: relative;
 }
 
-.main__menu{
+/* .main__menu{
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../public/images/heros/hero-image_4.jpg");
     background-size: cover;
     background-position: center;
@@ -223,7 +223,7 @@ main{
     width: 100%;
     margin-top: 30px;
     padding-bottom: 40px;
-} 
+}  */
 
 .main__menu .post__name{
     color: #ffffff;
