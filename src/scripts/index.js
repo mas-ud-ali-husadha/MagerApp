@@ -1,4 +1,4 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import 'regenerator-runtime';
 import '../styles/main.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
@@ -24,11 +24,4 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
-  // if ('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-  //     console.log('SW registered: ', registration);
-  //   }).catch((registrationError) => {
-  //     console.log('SW registration failed: ', registrationError);
-  //   });
-  // }
 });
