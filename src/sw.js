@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import 'regenerator-runtime';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response/CacheableResponsePlugin';
 import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration/ExpirationPlugin';
