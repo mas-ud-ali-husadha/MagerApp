@@ -23,12 +23,16 @@ const Home = {
       try {
         LoaderInitiator.add(restaurantListElement);
         const restaurants = await DataSource.Home();
-        LoaderInitiator.remove();
+        LoaderInitiator.remove(restaurantListElement);
         renderResult(restaurants);
       } catch (message) {
         console.log(message);
       }
     };
+
+    if (document.querySelector('.btn__favorite')) {
+      document.querySelector('.btn__favorite').remove();
+    }
 
     onLoadData();
   },

@@ -8,7 +8,7 @@ const LoaderInitiator = {
   _loader(element) {
     const elem = element;
     elem.innerHTML = `
-        <div class="loader">
+        <div id="loader" class="loader">
             <img src="./images/loader.gif" />
         </div> 
     `;

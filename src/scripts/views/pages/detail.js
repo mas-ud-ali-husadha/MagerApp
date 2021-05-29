@@ -3,6 +3,7 @@ import DataSource from '../../data/data-source';
 import UrlParser from '../../routes/url-parser';
 import '../../component/detail-item';
 import CONFIG from '../../globals/config';
+import LoaderInitiator from '../../utils/loader-initiator';
 
 const Detail = {
   async render() {
@@ -25,13 +26,24 @@ const Detail = {
 
     const onLoadData = async () => {
       try {
+        LoaderInitiator.add(detailItemElement);
         const restaurant = await DataSource.Detail(url.id);
+        LoaderInitiator.remove(detailItemElement);
         renderResult(restaurant);
       } catch (message) {
         console.log(message);
       }
     };
 
+    const favoriteButton = () => {
+      const button = document.createElement('button');
+      button.className = 'btn__favorite ';
+      button.innerHTML = '<i class="fa fa-heart"></i>';
+      document.querySelector('body').appendChild(button);
+    };
+    if (!document.querySelector('.btn__favorite')) {
+      favoriteButton();
+    }
     onLoadData();
   },
 };

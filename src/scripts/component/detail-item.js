@@ -15,7 +15,7 @@ class DetailItem extends HTMLElement {
             <img src="${CONFIG.BASE_IMAGE_URL}/images/small/${this._data.pictureId}" alt="${this._data.pictureId}" />
         </div>
 
-        <div class="detail__text">
+        <div class="detail__text ">
             <h1 class="detail__name">${this._data.name}</h1>
             <div class="detail__rating">Rating : ${StarRating.getStars(this._data.rating)} (${this._data.rating})</div>
             <div class="detail__address"><i class="fa fa-map-marker-alt"></i> : <span class="square">${this._data.address}, ${this._data.city}</span></div>
