@@ -1,10 +1,10 @@
 import DataSource from '../../data/data-source';
-// import { createRestaurantItemTemplate } from '../templates/template-creator';
 import UrlParser from '../../routes/url-parser';
 import '../../component/detail-item';
 import CONFIG from '../../globals/config';
 import LoaderInitiator from '../../utils/loader-initiator';
 import FavoriteButton from '../../utils/favorite-button';
+import PostData from '../../utils/post-data';
 
 const Detail = {
   async render() {
@@ -45,6 +45,32 @@ const Detail = {
       detailItemElement.renderError(message);
     };
 
+    const reviewPost = (itemId) => {
+      const form = document.querySelector('#form__review');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const id = itemId;
+          const reviewUrl = `${CONFIG.BASE_URL}/review`;
+          const name = document.getElementById('name').value;
+          const review = document.getElementById('reviewtxt').value;
+          PostData({
+            url: reviewUrl,
+            data: {
+              id,
+              name,
+              review,
+            },
+          }).then(() => {
+            // eslint-disable-next-line no-use-before-define
+            onLoadData();
+          }).catch((err) => {
+            console.log(err);
+          });
+        });
+      }
+    };
+
     const onLoadData = async () => {
       try {
         LoaderInitiator.add(detailItemElement);
@@ -52,6 +78,7 @@ const Detail = {
         favoriteButton(restaurant);
         LoaderInitiator.remove(detailItemElement);
         renderResult(restaurant);
+        reviewPost(restaurant.id);
       } catch (message) {
         renderError(message);
       }

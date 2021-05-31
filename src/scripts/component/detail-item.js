@@ -76,11 +76,13 @@ class DetailItem extends HTMLElement {
             <div class="card__menu comment">
               <h2>Give Your Riview </h2>
               <div class="card__body">
+                <form id="form__review">
                   <div>Name : </div>
-                  <input type="text" class="input__input" placeholder="Masukan Nama Mu"/>
+                  <input id="name" name="name" type="text" class="input__input" placeholder="Masukan Nama Mu"/>
                   <div>Review : </div>
-                  <input type="text" class="input__input" placeholder="Masukan Review Mu"/>
-                  <button class="btn">Submit</button>    
+                  <input id="reviewtxt" name="reviewtxt" type="text" class="input__input" placeholder="Masukan Review Mu"/>
+                  <button class="btn" type="submit">Submit</button>    
+                </form>
               </div>
             </div> 
 
