@@ -518,6 +518,10 @@ a{
   margin-top: 4px;
 }
 
+.error__data{
+    grid-column: 1 / span 3;
+    height: 100vh;
+}
 @media screen and (max-width: 600px) {
     
     .nav__list{

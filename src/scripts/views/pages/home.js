@@ -19,6 +19,10 @@ const Home = {
       restaurantListElement.restaurants = results;
     };
 
+    const renderError = (message) => {
+      restaurantListElement.renderError(message);
+    };
+
     const onLoadData = async () => {
       try {
         LoaderInitiator.add(restaurantListElement);
@@ -26,7 +30,7 @@ const Home = {
         LoaderInitiator.remove(restaurantListElement);
         renderResult(restaurants);
       } catch (message) {
-        console.log(message);
+        renderError(message);
       }
     };
     onLoadData();

@@ -41,6 +41,10 @@ const Detail = {
       }
     };
 
+    const renderError = (message) => {
+      detailItemElement.renderError(message);
+    };
+
     const onLoadData = async () => {
       try {
         LoaderInitiator.add(detailItemElement);
@@ -49,7 +53,7 @@ const Detail = {
         LoaderInitiator.remove(detailItemElement);
         renderResult(restaurant);
       } catch (message) {
-        console.log(message);
+        renderError(message);
       }
     };
 
