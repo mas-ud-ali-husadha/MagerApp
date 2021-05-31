@@ -495,7 +495,7 @@ a{
     height: 100vh;
     text-align: center;
     grid-column: 1 / span 3;
-    margin-top: 100px;
+    margin-top: 200px;
     background-color: white;
 }
 
@@ -511,6 +511,7 @@ a{
     right: 20px;
     font-size: 24px;
     color: white;
+    cursor: pointer;
 }
 
 .btn__favorite i{
@@ -556,6 +557,7 @@ a{
         list-style-type: none;
         box-sizing: border-box;
     }    
+    
     
 }
 
@@ -609,7 +611,12 @@ a{
     .tabs label {
         width: 50%;
     }
-   
+    
+    .detail__img img{
+        max-width: 100%;
+        width: 100%;
+    }
+
 }
 
 @media screen and (min-width: 768px) {

@@ -4,6 +4,7 @@ import UrlParser from '../../routes/url-parser';
 import '../../component/detail-item';
 import CONFIG from '../../globals/config';
 import LoaderInitiator from '../../utils/loader-initiator';
+import FavoriteButton from '../../utils/favorite-button';
 
 const Detail = {
   async render() {
@@ -24,10 +25,27 @@ const Detail = {
       linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${CONFIG.BASE_IMAGE_URL}/images/medium/${results.pictureId})`;
     };
 
+    const favoriteButton = async (restaurant) => {
+      if (!document.querySelector('.btn__favorite')) {
+        await FavoriteButton.init({
+          detailItemElement,
+          restaurant: {
+            id: restaurant.id,
+            name: restaurant.name,
+            description: restaurant.description,
+            rating: restaurant.rating,
+            city: restaurant.city,
+            pictureId: restaurant.pictureId,
+          },
+        });
+      }
+    };
+
     const onLoadData = async () => {
       try {
         LoaderInitiator.add(detailItemElement);
         const restaurant = await DataSource.Detail(url.id);
+        favoriteButton(restaurant);
         LoaderInitiator.remove(detailItemElement);
         renderResult(restaurant);
       } catch (message) {
@@ -35,15 +53,6 @@ const Detail = {
       }
     };
 
-    const favoriteButton = () => {
-      const button = document.createElement('button');
-      button.className = 'btn__favorite ';
-      button.innerHTML = '<i class="fa fa-heart"></i>';
-      document.querySelector('body').appendChild(button);
-    };
-    if (!document.querySelector('.btn__favorite')) {
-      favoriteButton();
-    }
     onLoadData();
   },
 };
