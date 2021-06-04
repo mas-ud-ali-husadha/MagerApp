@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-restricted-globals */
 import 'regenerator-runtime';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response/CacheableResponsePlugin';
 import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from 'workbox-strategies';
@@ -6,7 +6,6 @@ import { ExpirationPlugin } from 'workbox-expiration/ExpirationPlugin';
 import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
 import { registerRoute } from 'workbox-routing/registerRoute';
 
-// eslint-disable-next-line no-restricted-globals
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(

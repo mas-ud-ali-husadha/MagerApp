@@ -6,8 +6,8 @@ const Home = {
   async render() {
     return `
         <hero-section></hero-section>
-          <div class="container">
-            <h1 class="post__name">Daftar Restaurant</h1>
+          <div class="container" >
+            <h1 class="post__name" id="main__content">Daftar Restaurant</h1>
                 <restaurant-list class="card__grid" id="menu__grid"></restaurant-list>
           </div>
         `;

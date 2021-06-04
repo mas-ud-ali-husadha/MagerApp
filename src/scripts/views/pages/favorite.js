@@ -7,7 +7,7 @@ const Favorite = {
     return `
         <hero-section></hero-section>
           <div class="container">
-            <h1 class="post__name">Your Liked Restaurant</h1>
+            <h1 class="post__name" id="main__content">Your Liked Restaurant</h1>
                 <restaurant-list class="card__grid" id="menu__grid"></restaurant-list>
           </div>
         `;

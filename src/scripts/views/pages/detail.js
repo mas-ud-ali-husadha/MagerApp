@@ -11,7 +11,7 @@ const Detail = {
     return `
         <div class="nav__color"></div> 
         <div class="container">
-                <detail-item class="detail__grid"></detail-item>
+                <detail-item class="detail__grid" id="main__content"></detail-item>
         </div>
         `;
   },

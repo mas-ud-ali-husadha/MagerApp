@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
