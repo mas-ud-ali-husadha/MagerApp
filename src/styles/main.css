@@ -105,13 +105,13 @@ body,html{
 }
 
 .hero .hero__inner .hero__img{
-    width: 90%;
+    width: 100%;
 
 }
 
 .hero .hero__inner .hero__text{
     padding-top: 30px;
-    font-size: 20px;
+    font-size: 30px;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
 
 } 
@@ -550,7 +550,7 @@ a{
 }
 
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 600px) {
     .header__menu {
         display: none;
     }
@@ -560,14 +560,7 @@ a{
     .headline__figure{
         width: 100%;
     }
-    .hero .hero__inner .hero__text{
-        margin-top: -40px;
-        font-size: 30px;
-    } 
-    
-    .hero .hero__inner .hero__text p{
-        font-size: 34px;
-    }
+   
     .headline__figure{
         width: 100%;
     }
@@ -649,7 +642,14 @@ a{
     .detail__menu{
         grid-template-columns: repeat(2,1fr);
     }
-   
+    .hero .hero__inner .hero__text{
+        margin-top: -40px;
+        font-size: 40px;
+    } 
+    
+    .hero .hero__inner .hero__text p{
+        font-size: 40px;
+    }
  
 }   
 
