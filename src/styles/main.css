@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -133,7 +131,7 @@ body,html{
     display: block;
     width:100%;
     margin: 10px 0;
-	padding: 13px;
+	padding: 15px;
     background-color: cornflowerblue;
     border-radius: 5px;
     text-transform: uppercase;
@@ -143,6 +141,7 @@ body,html{
     cursor: pointer;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1);
     border: solid 1px #fafafa;
+    box-sizing: border-box;
 }
 
 .btn:hover {
@@ -246,13 +245,13 @@ a{
 
 .rating{
     position: absolute;
-    bottom: 194px;
+    bottom: 193px;
     right: -6px;
     padding: 20px;
     color: white;
     font-weight: 500;
-    border-radius: 5px;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, 0.1);
     font-size: 17px;
 }
 .location{
@@ -293,11 +292,7 @@ a{
     text-decoration: none;
 }
 
-.hover:hover{
-    transform: translate(0,-50px);
-    box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
 
-}
 
 /* DETAIL */
 .nav__color{
@@ -466,18 +461,7 @@ a{
 
 .comment{
     background-color:darkgray;
-    height: 300px;
-    
-}
-
-.comment{
-    background-color:darkgray;
-    height: 320px;
-  
-}
-
-.comment:hover{
-    display: block;
+    height: 320px; 
 }
 
 .input__input{
@@ -691,6 +675,11 @@ a{
     .nav{
        padding: 0 70px;
 
+    }
+
+    .hover:hover{
+        transform: translate(0,-50px);
+        box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
     }
 
     .headline{
