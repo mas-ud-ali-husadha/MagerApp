@@ -43,6 +43,7 @@
     "copy-webpack-plugin": "^6.0.3",
     "html-webpack-plugin": "^4.3.0",
     "idb": "^6.1.2",
+    "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.5",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",

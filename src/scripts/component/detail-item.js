@@ -27,7 +27,7 @@ class DetailItem extends HTMLElement {
     const { menus } = this._data;
     this.innerHTML = `
         <div class="detail__img">
-            <img src="${CONFIG.BASE_IMAGE_URL}/images/medium/${this._data.pictureId}" alt="${this._data.pictureId}" />
+            <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}/images/medium/${this._data.pictureId}" alt="${this._data.pictureId}" />
         </div>
 
         <div class="detail__text ">
@@ -49,40 +49,40 @@ class DetailItem extends HTMLElement {
           <div class="detail__menu">
 
             <div class="card__menu foods">
-              <h2>FOODS</h2>
+              <h1><i class="fa fa-hamburger">&nbsp&nbsp&nbsp</i>FOODS</h1>
               <div class="card__body">
-                <h4 class="card__name">
+                <div class="card__name">
                  <ul>
                   ${menus.foods.map((food) => `
-                      <li class="card__text"><strong>${food.name}</strong></li>
+                      <li class="card__text">${food.name}</li>
                   `).join('')}
                  </ul>
-                </h4>
+                </div>
               </div>
             </div> 
 
             <div class="card__menu drinks">
-              <h2>DRINKS</h2>
+              <h1><i class="fa fa-mug-hot">&nbsp&nbsp&nbsp</i>DRINKS</h1>
               <div class="card__body">
-                <h4 class="card__name">
+                <div class="card__name">
                   <ul>
                     ${menus.drinks.map((drink) => `
-                        <li class="card__text"><strong>${drink.name}</strong></li>
+                        <li class="card__text">${drink.name}</li>
                     `).join('')}
                   </ul>
-                </h4>
+                </div>
               </div>
             </div> 
             
             <div class="card__menu comment">
-              <h2>Give Your Riview </h2>
+              <h1><i class="far fa-comment-dots">&nbsp&nbsp&nbsp</i>Give Your Riview </h1>
               <div class="card__body">
                 <form id="form__review">
                   <div>Name : </div>
                   <input id="yourname" name="name" type="text" class="input__input" placeholder="Masukan Nama Mu"/>
                   <div>Review : </div>
                   <textarea rows="5" id="reviewtxt" name="reviewtxt" type="text" class="input__input" placeholder="Masukan Review Mu"></textarea>
-                  <button id="reviewsubmit" class="btn" type="submit">Submit</button>    
+                  <button id="reviewsubmit" class="btn" type="submit"><i class="fa fa-paper-plane"></i>&nbsp&nbspPost Review</button>    
                 </form>
               </div>
             </div> 
