@@ -90,6 +90,7 @@
     .detail__img img{
         max-width: 100%;
         width: 100%;
+        height: auto;
     }
 
     .error__data{
@@ -106,6 +107,7 @@
    .detail__img img{
         max-width: 100%;
         width: 100%;
+        height: auto;
     }
 
     .detail__text{

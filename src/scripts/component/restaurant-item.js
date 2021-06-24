@@ -12,7 +12,7 @@ class RestaurantItem extends HTMLElement {
        <a href="${`/#/detail/${this._data.id}`}">
         <div class="card__menu hover">
             <div>
-                <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}/images/medium/${this._data.pictureId}" alt="${this._data.pictureId}">
+                <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}/images/small/${this._data.pictureId}" alt="${this._data.pictureId}">
                 <div class="rating">${StarRating.getStars(this._data.rating)} : ${this._data.rating}</div>
             </div>
             <div class="card__body">

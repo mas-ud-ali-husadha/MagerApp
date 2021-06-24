@@ -19,6 +19,7 @@
 .detail__img img{
     max-width: 600px;
     width: 100%;
+    height: auto;
     border: solid 1px #fafafa;
     box-shadow: 0 5px 10px #777;
     border-radius: 30px;
