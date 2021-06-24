@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
@@ -18,7 +17,14 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
@@ -78,13 +84,6 @@ module.exports = {
        }),
      ],
     }),
-    new BundleAnalyzerPlugin(),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // all options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-      ignoreOrder: false, // Enable to remove warnings about conflicting order
-    }),
+    new MiniCssExtractPlugin(),
   ],
 };
