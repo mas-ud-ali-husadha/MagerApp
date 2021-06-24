@@ -12,9 +12,10 @@ class DetailItem extends HTMLElement {
       <div class="card__menu error__data">
         <div class="card__body">
           <div class="card__name">
-            <h2>Error Ketika Menload Data</h2>
+            <h1><i class="fa fa-exclamation-triangle"></i></h1>
+            <h2>Error When Loading Data</h2>
             <h4 class="card__text">Detail : ${message}</h4>
-            <h5>Coba Cek Koneksi Anda Dan Coba Lagi</h5>
+            <h5>Try Checking Your Connection And Try Again</h5>
           </div>
         </div>
       </div>
@@ -78,10 +79,10 @@ class DetailItem extends HTMLElement {
               <div class="card__body">
                 <form id="form__review">
                   <div>Name : </div>
-                  <input id="name" name="name" type="text" class="input__input" placeholder="Masukan Nama Mu"/>
+                  <input id="yourname" name="name" type="text" class="input__input" placeholder="Masukan Nama Mu"/>
                   <div>Review : </div>
-                  <input id="reviewtxt" name="reviewtxt" type="text" class="input__input" placeholder="Masukan Review Mu"/>
-                  <button class="btn" type="submit">Submit</button>    
+                  <textarea rows="5" id="reviewtxt" name="reviewtxt" type="text" class="input__input" placeholder="Masukan Review Mu"></textarea>
+                  <button id="reviewsubmit" class="btn" type="submit">Submit</button>    
                 </form>
               </div>
             </div> 

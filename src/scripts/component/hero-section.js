@@ -7,8 +7,8 @@ class Hero extends HTMLElement {
     this.innerHTML = `
         <div class="hero">
                 <div class="hero__inner">
-                    <!-- Gambar Dari https://www.freepik.com/free-vector/happy-male-chef-holding-ramen-noodle-cartoon-icon-illustration_11787945.htm --> 
-                    <img class="hero__img" src="../images/logo.png" alt="logo" > 
+                    <!-- Picture From https://www.freepik.com/free-vector/happy-male-chef-holding-ramen-noodle-cartoon-icon-illustration_11787945.htm --> 
+                    <img width="500" height="500" class="hero__img" src="../images/logo.png" alt="logo" > 
                     <div class="hero__text">
                             <h1>Selamat Datang </h1>
                             <p>Daftar Restaurant Terbaik SeIndonesia</p>

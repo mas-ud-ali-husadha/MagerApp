@@ -16,7 +16,12 @@ const Favorite = {
     const restaurantListElement = document.querySelector('restaurant-list');
 
     const renderResult = (results) => {
-      restaurantListElement.restaurants = results;
+      console.log(results.length);
+      if(results.length){
+        restaurantListElement.restaurants = results;
+      }else{
+        restaurantListElement.renderEmptyData();
+      }
     };
 
     const onLoadData = async () => {

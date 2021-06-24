@@ -1,0 +1,241 @@
+
+@media screen and (max-width: 600px) {
+    
+    .nav__list{
+        width: 100%;    
+        position: absolute;
+        padding:  0;
+        -webkit-transform: translate(0, -300px);
+        transform: translate(0, -300px);
+        transition: transform 0.3s ease;
+        margin-top: 75px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav{
+       padding: 0;
+       justify-content: space-between;
+       font-size: xx-large;
+    }
+
+    .nav__brand{
+        font-size: 100%;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+    .open {
+
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .nav__list .nav__item {
+        display: block;
+        padding: 20px 0;
+        text-align: left;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        list-style-type: none;
+        box-sizing: border-box;
+    }    
+    
+    
+}
+
+
+@media screen and (min-width: 600px) {
+    .header__menu {
+        display: none;
+    }
+    .nav{
+        padding: 12px;
+    }
+    .headline__figure{
+        width: 100%;
+    }
+   
+    .headline__figure{
+        width: 100%;
+    }
+
+    .card__grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+     .card__menu img{
+        height: 200px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+     .headline__figure{
+        width: 100%;
+
+    }
+
+    .img__2{
+        display: none;
+    }
+    .img__3{
+        display: none;
+    }
+
+    .tabs label {
+        width: 50%;
+    }
+    
+    .detail__img img{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .error__data{
+        font-size:medium;
+    }
+}
+
+@media screen and (min-width: 768px) {
+   
+   .headline__content{
+       padding-left: 30px;
+   }
+
+   .detail__img img{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .detail__text{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+   
+    .post__name{
+        font-size: 50px;
+    }
+
+    .post__title{
+        font-size: 40px;
+    }
+     .headline{
+        grid-template-columns:  repeat(2,1fr);
+        
+    }
+     .card__menu img{
+        height: 300px;
+    }
+
+    .user__review{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .tabs label {
+        width: 50%;
+    }
+
+    .detail__menu{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hero{
+        height: 900px;
+    }
+    .hero .hero__inner .hero__text{
+        margin-top: -40px;
+        font-size: 40px;
+    } 
+    
+    .hero .hero__inner .hero__text p{
+        font-size: 40px;
+    }
+
+     .hero .hero__inner .hero__img{
+        width: 70%;
+        height: auto;
+    } 
+ 
+}   
+
+@media only screen and (min-width: 1200px) {
+    .hero{
+        height: 110vh;
+    }
+     .hero .hero__inner {
+        margin-top: 20px;
+    } 
+    
+    .hero .hero__inner .hero__text{
+        margin-top: -90px;
+    } 
+
+     .hero .hero__inner .hero__text p{
+        font-size: 46px;
+        margin-top: -10px;
+    } 
+
+    .nav{
+       padding: 0 70px;
+
+    }
+
+    .hover:hover{
+        transform: translate(0,-50px);
+        box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .headline{
+        grid-template-columns:  repeat(2,1fr);
+
+    }
+   
+    .card__grid{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+
+    
+
+    .detail__grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .detail__text .detail__name{
+        font-weight: 400;
+        font-size: 50px;
+        color: #ffffff;
+
+    }
+    .detail__text .detail__rating{
+        margin-top: 5px;
+        font-weight: 400;
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: 1 / span 2;
+    }
+
+    .tabs label {
+        width: 25%;
+    }
+
+    .user__review{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .detail__menu{
+        grid-template-columns: repeat(3,1fr);
+        
+    }
+
+    
+}
+
+

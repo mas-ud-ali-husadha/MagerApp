@@ -1,6 +1,6 @@
 import CONFIG from '../globals/config';
 import StarRating from '../utils/star-rating';
-
+import LimitText from "../utils/description-text";
 class RestaurantItem extends HTMLElement {
   set restaurant(restaurant) {
     this._data = restaurant;
@@ -16,11 +16,11 @@ class RestaurantItem extends HTMLElement {
                 <div class="rating">${StarRating.getStars(this._data.rating)} : ${this._data.rating}</div>
             </div>
             <div class="card__body">
-                <h4 class="card__name">
+                <div class="card__name">
                     <div class="card__text"> ${this._data.name} </div>
                     <div class="location" >Kota ${this._data.city}</div>
-                </h4>
-                <p>${this._data.description}</p>
+                </div>
+                <p class="card__description">${LimitText.descriptionTxt(this._data.description)}</p>
             </div>
         </div>
     </a>

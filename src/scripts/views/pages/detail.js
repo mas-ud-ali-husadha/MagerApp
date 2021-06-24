@@ -3,8 +3,9 @@ import UrlParser from '../../routes/url-parser';
 import '../../component/detail-item';
 import CONFIG from '../../globals/config';
 import LoaderInitiator from '../../utils/loader-initiator';
-import FavoriteButton from '../../utils/favorite-button';
+import likeButtonPresenter from '../../utils/like-button-presenter';
 import PostData from '../../utils/post-data';
+import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
 
 const Detail = {
   async render() {
@@ -27,8 +28,9 @@ const Detail = {
 
     const favoriteButton = async (restaurant) => {
       if (!document.querySelector('.btn__favorite')) {
-        await FavoriteButton.init({
-          detailItemElement,
+        await likeButtonPresenter.init({
+          elemContainer: detailItemElement,
+          favoriteRestaurants: FavoriteRestaurantIdb,
           restaurant: {
             id: restaurant.id,
             name: restaurant.name,
@@ -52,7 +54,7 @@ const Detail = {
           e.preventDefault();
           const id = itemId;
           const reviewUrl = `${CONFIG.BASE_URL}/review`;
-          const name = document.getElementById('name').value;
+          const name = document.getElementById('yourname').value;
           const review = document.getElementById('reviewtxt').value;
           PostData({
             url: reviewUrl,
