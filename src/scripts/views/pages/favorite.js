@@ -1,5 +1,4 @@
 import '../../component/restaurant-list';
-import LoaderInitiator from '../../utils/loader-initiator';
 import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
 
 const Favorite = {
@@ -16,7 +15,6 @@ const Favorite = {
     const restaurantListElement = document.querySelector('restaurant-list');
 
     const renderResult = (results) => {
-      console.log(results.length);
       if(results.length){
         restaurantListElement.restaurants = results;
       }else{
@@ -26,12 +24,10 @@ const Favorite = {
 
     const onLoadData = async () => {
       try {
-        LoaderInitiator.add(restaurantListElement);
         const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
-        LoaderInitiator.remove(restaurantListElement);
         renderResult(restaurants);
       } catch (message) {
-        console.log(message);
+        restaurantListElement.renderError(message);
       }
     };
 

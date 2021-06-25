@@ -33,6 +33,12 @@ class RestaurantList extends HTMLElement {
       </div>
     `;
   }
+
+  renderLoader(){
+    this.innerHTML = `
+      <div class="card_skeleton_loader"></div>
+    `
+  }
   render() {
     this._restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement('restaurant-item');

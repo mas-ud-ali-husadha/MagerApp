@@ -1,6 +1,6 @@
 import DataSource from '../../data/data-source';
 import '../../component/restaurant-list';
-import LoaderInitiator from '../../utils/loader-initiator';
+import SkeletonLoader from '../../utils/skeleton-loader';
 
 const Home = {
   async render() {
@@ -25,9 +25,9 @@ const Home = {
 
     const onLoadData = async () => {
       try {
-        LoaderInitiator.add(restaurantListElement);
+        SkeletonLoader.init(restaurantListElement);
         const restaurants = await DataSource.Home();
-        LoaderInitiator.remove(restaurantListElement);
+        SkeletonLoader.remove();
         renderResult(restaurants);
       } catch (message) {
         renderError(message);

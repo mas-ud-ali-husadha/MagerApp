@@ -2,7 +2,6 @@ import DataSource from '../../data/data-source';
 import UrlParser from '../../routes/url-parser';
 import '../../component/detail-item';
 import CONFIG from '../../globals/config';
-import LoaderInitiator from '../../utils/loader-initiator';
 import likeButtonPresenter from '../../utils/like-button-presenter';
 import PostData from '../../utils/post-data';
 import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
@@ -75,10 +74,8 @@ const Detail = {
 
     const onLoadData = async () => {
       try {
-        LoaderInitiator.add(detailItemElement);
         const restaurant = await DataSource.Detail(url.id);
         favoriteButton(restaurant);
-        LoaderInitiator.remove(detailItemElement);
         renderResult(restaurant);
         reviewPost(restaurant.id);
       } catch (message) {
