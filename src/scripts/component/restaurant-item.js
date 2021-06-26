@@ -1,6 +1,7 @@
 import CONFIG from '../globals/config';
 import StarRating from '../utils/star-rating';
-import LimitText from "../utils/description-text";
+import LimitText from '../utils/description-text';
+
 class RestaurantItem extends HTMLElement {
   set restaurant(restaurant) {
     this._data = restaurant;

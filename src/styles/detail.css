@@ -205,3 +205,90 @@
 .btn__favorite i{
   margin-top: 4px;
 }
+
+.card_skeleton_loader_detail_img{
+  width: 100%;
+  display: relative;
+  height: 480px;
+  cursor: progress; 
+  background: 
+    linear-gradient(0.25turn, transparent, #fff, transparent),
+   
+    linear-gradient(#eee, #eee);  
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%; 
+  background-position: -315px 0, 0 0;
+  animation: iloading 1.5s infinite;
+  
+}
+
+@keyframes iloading {  
+  to {
+    background-position: 315px 0, 0 0;
+  }
+}
+
+.card_skeleton_loader_detail_description{
+  width: 100%;
+  display: relative;
+  height: 480px;
+  cursor: progress; 
+  background: 
+    linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee), 
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee), 
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee);  
+  background-repeat: no-repeat;
+  background-size: 10% 9%, 
+                   10% 8%,
+                   100% 100%,
+                   40% 9%,
+                   40% 8%, 
+                   35% 5%,
+                   35% 5%,
+                   100% 3%,
+                   100% 3%,
+                   100% 3%,
+                   100% 3%,
+                   100% 3%;
+  background-position: -34% 0,
+                       -34% 60px, 
+                       -315px 120px, 
+                        0 0,
+                        0 60px,
+                        0 120px,
+                        0 160px,
+                        0 200px,
+                        0 240px,
+                        0 280px,
+                        0 320px,
+                        0 360px;
+  animation: dloading 1.5s infinite;
+  
+}
+
+@keyframes dloading {  
+  to {
+    background-position: 34% 0,
+                         34% 60px,
+                         315px 120px, 
+                         0 0,
+                         0 60px,
+                         0 120px,
+                         0 160px,
+                         0 200px,
+                         0 240px,
+                         0 280px,
+                         0 320px,
+                         0 360px;
+                         
+  }
+}

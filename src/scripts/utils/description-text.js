@@ -1,7 +1,7 @@
 const LimitText = {
   descriptionTxt(txt) {
-    let desc = txt.substring(txt,90);
-    desc += "...";
+    let desc = txt.substring(txt, 90);
+    desc += '...';
     return desc;
   },
 };

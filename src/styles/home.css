@@ -162,11 +162,11 @@
   background-repeat: no-repeat;
   background-size: 100% 100%, 100% 310px, 225px 22px,225px 22px,95% 10px,95% 10px,95% 10px; 
   background-position: -315px 0, 0 0 , 10px 330px,10px 370px,10px 410px,10px 430px,10px 450px;
-  animation: loading 1.5s infinite;
+  animation: hloading 1.5s infinite;
   
 }
 
-@keyframes loading {  
+@keyframes hloading {  
   to {
     background-position: 315px 0, 0 0, 10px 330px,10px 370px,10px 410px,10px 430px,10px 450px;
   }

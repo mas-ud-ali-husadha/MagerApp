@@ -5,6 +5,7 @@ import CONFIG from '../../globals/config';
 import likeButtonPresenter from '../../utils/like-button-presenter';
 import PostData from '../../utils/post-data';
 import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
+import SkeletonLoader from '../../utils/skeleton-loader';
 
 const Detail = {
   async render() {
@@ -74,7 +75,9 @@ const Detail = {
 
     const onLoadData = async () => {
       try {
+        SkeletonLoader.detailLoader(detailItemElement);
         const restaurant = await DataSource.Detail(url.id);
+        SkeletonLoader.remove(detailItemElement);
         favoriteButton(restaurant);
         renderResult(restaurant);
         reviewPost(restaurant.id);

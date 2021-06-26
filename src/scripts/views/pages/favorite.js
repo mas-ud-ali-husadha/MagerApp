@@ -15,9 +15,9 @@ const Favorite = {
     const restaurantListElement = document.querySelector('restaurant-list');
 
     const renderResult = (results) => {
-      if(results.length){
+      if (results.length) {
         restaurantListElement.restaurants = results;
-      }else{
+      } else {
         restaurantListElement.renderEmptyData();
       }
     };

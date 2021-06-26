@@ -21,7 +21,7 @@ class RestaurantList extends HTMLElement {
     `;
   }
 
-  renderEmptyData(){
+  renderEmptyData() {
     this.innerHTML = `
       <div class="card__menu error__data">
         <div class="card__body">
@@ -34,11 +34,12 @@ class RestaurantList extends HTMLElement {
     `;
   }
 
-  renderLoader(){
+  renderLoader() {
     this.innerHTML = `
       <div class="card_skeleton_loader"></div>
-    `
+    `;
   }
+
   render() {
     this._restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement('restaurant-item');

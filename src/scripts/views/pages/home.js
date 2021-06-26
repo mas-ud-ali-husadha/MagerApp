@@ -25,9 +25,9 @@ const Home = {
 
     const onLoadData = async () => {
       try {
-        SkeletonLoader.init(restaurantListElement);
+        SkeletonLoader.homeLoader(restaurantListElement);
         const restaurants = await DataSource.Home();
-        SkeletonLoader.remove();
+        SkeletonLoader.remove(restaurantListElement);
         renderResult(restaurants);
       } catch (message) {
         renderError(message);
