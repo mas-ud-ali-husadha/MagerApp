@@ -5,7 +5,6 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
@@ -109,6 +108,5 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin(),
-    new BundleAnalyzerPlugin(),
   ],
 };
