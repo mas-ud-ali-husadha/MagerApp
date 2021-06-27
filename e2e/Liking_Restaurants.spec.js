@@ -6,11 +6,11 @@ Before(({ I }) => {
 });
 
 Scenario('showing empty liked restaurants', ({ I }) => {
-  I.see('Anda Belum Memiliki Restaurant Favorit', '.restaurant_empty_text');
+  I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
 });
 
-Scenario('liking 1 restaurant', async ({ I }) => {
-  I.see('Anda Belum Memiliki Restaurant Favorit', '.restaurant_empty_text');
+Scenario('liking 1 restaurant and unlike 1 restaurant', ({ I }) => {
+  I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
 
   I.amOnPage('/');
 
@@ -24,10 +24,22 @@ Scenario('liking 1 restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
+
+  I.seeElement('restaurant-item a');
+
+  const favoriteRestaurant = locate('.card__text').first();
+
+  I.click(favoriteRestaurant);
+
+  I.click('#likedButton');
+
+  I.amOnPage('/#/favorite');
+
+  I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
 });
 
-Scenario('liking 3 restaurant', async ({ I }) => {
-  I.see('Anda Belum Memiliki Restaurant Favorit', '.restaurant_empty_text');
+Scenario('liking 3 restaurant and unlike 1 restaurant', ({ I }) => {
+  I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
 
   I.amOnPage('/');
 
@@ -37,7 +49,20 @@ Scenario('liking 3 restaurant', async ({ I }) => {
     I.click(locate('restaurant-item a').at(i));
     I.seeElement('#likeButton');
     I.click('#likeButton');
+    I.amOnPage('/#/favorite');
+
+    I.seeElement('restaurant-item a');
+
+    const favoriteRestaurant = locate('restaurant-item a').first();
+
+    I.click(favoriteRestaurant);
+
+    I.click('#likedButton');
+
+    I.amOnPage('/#/favorite');
+
+    I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
     I.amOnPage('/');
   }
-  I.amOnPage('/#/favorite');
+  I.amOnPage('/');
 });

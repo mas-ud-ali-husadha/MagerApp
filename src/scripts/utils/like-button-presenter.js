@@ -32,7 +32,7 @@ const likeButtonPresenter = {
   _likedButton() {
     this._button.innerHTML = '<i class="fa fa-heart"></i>';
     this._button.ariaLabel = 'unlike this restaurant';
-    this._button.id = 'likeButton';
+    this._button.id = 'likedButton';
     this._elem.append(this._button);
     this._button.addEventListener('click', async () => {
       await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);

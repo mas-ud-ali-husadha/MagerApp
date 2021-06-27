@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import * as TestFactories from './helpers/testFactories';
 import FavoriteRestaurantIdb from '../src/scripts/data/favoriterestaurant-idb';
 
@@ -39,7 +40,7 @@ describe('Liking A Restaurant', () => {
     await FavoriteRestaurantIdb.putRestaurant({ id: 1 });
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));
-  
+
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([{ id: 1 }]);
 
     FavoriteRestaurantIdb.deleteRestaurant(1);
@@ -52,6 +53,4 @@ describe('Liking A Restaurant', () => {
 
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
-
-  
 });
