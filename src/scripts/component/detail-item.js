@@ -91,14 +91,14 @@ class DetailItem extends HTMLElement {
         </div>
 
         <input type="radio" name="tabs" id="tabtwo">
-        <label for="tabtwo">Review</label>
+        <label for="tabtwo" id="reviewlbl">Review</label>
         <div class="tab">
           <h1>${customerReviews.length} Komentar</h1>
           <div class="user__review">
           ${customerReviews.map((review) => `
                   <div class="user__name square">
                     <b>${review.name}</b> <span>${review.date}</span>
-                    <p>
+                    <p id="yourreview">
                       ${review.review}
                     </p>
                   </div>

@@ -1,4 +1,7 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable no-undef */
+const assert = require('assert');
+
 Feature('Liking Restaurants');
 
 Before(({ I }) => {
@@ -9,51 +12,26 @@ Scenario('showing empty liked restaurants', ({ I }) => {
   I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
 });
 
-Scenario('liking 1 restaurant and unlike 1 restaurant', ({ I }) => {
+Scenario('liking  restaurant and unlike  restaurant', async ({ I }) => {
   I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
 
   I.amOnPage('/');
-
-  I.seeElement('restaurant-item a');
-
-  const firstRestaurant = locate('.card__text').first();
-
-  I.click(firstRestaurant);
-
-  I.seeElement('#likeButton');
-  I.click('#likeButton');
-
-  I.amOnPage('/#/favorite');
-
-  I.seeElement('restaurant-item a');
-
-  const favoriteRestaurant = locate('.card__text').first();
-
-  I.click(favoriteRestaurant);
-
-  I.click('#likedButton');
-
-  I.amOnPage('/#/favorite');
-
-  I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
-});
-
-Scenario('liking 3 restaurant and unlike 1 restaurant', ({ I }) => {
-  I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
-
-  I.amOnPage('/');
-
-  I.seeElement('restaurant-item a');
 
   for (let i = 1; i <= 3; i += 1) {
-    I.click(locate('restaurant-item a').at(i));
+    I.seeElement('restaurant-item a');
+    const Restaurant = locate('.card__text').at(i);
+    const RestaurantText = await I.grabTextFrom(Restaurant);
+
+    I.click(Restaurant);
+
     I.seeElement('#likeButton');
     I.click('#likeButton');
+
     I.amOnPage('/#/favorite');
-
     I.seeElement('restaurant-item a');
-
-    const favoriteRestaurant = locate('restaurant-item a').first();
+    const favoriteRestaurant = locate('.card__text').first();
+    const FavoritedRestaurantText = await I.grabTextFrom(favoriteRestaurant);
+    assert.strictEqual(RestaurantText, FavoritedRestaurantText);
 
     I.click(favoriteRestaurant);
 
@@ -64,5 +42,4 @@ Scenario('liking 3 restaurant and unlike 1 restaurant', ({ I }) => {
     I.see("Your don't have any favorite Restaurant yet", '.restaurant_empty_text');
     I.amOnPage('/');
   }
-  I.amOnPage('/');
 });
