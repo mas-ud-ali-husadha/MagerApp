@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "start-dev": "webpack-dev-server --config webpack.dev.js ",
+    "build": "webpack --config webpack.prod.js && npm run build-image",
     "test": "karma start",
     "lint": "eslint ./src",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -35,6 +36,7 @@
     "karma-webpack": "^4.0.2",
     "mini-css-extract-plugin": "^1.6.0",
     "puppeteer": "^10.0.0",
+    "sharp": "^0.28.3",
     "style-loader": "^1.2.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "whatwg-fetch": "^3.2.0"

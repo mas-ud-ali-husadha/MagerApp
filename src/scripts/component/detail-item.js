@@ -27,7 +27,7 @@ class DetailItem extends HTMLElement {
     const { menus } = this._data;
     this.innerHTML = `
         <div class="detail__img">
-            <img class="lazyload" width="807" height="540" src="${CONFIG.BASE_IMAGE_URL}/images/medium/${this._data.pictureId}" alt="${this._data.pictureId}" />
+            <img class="lazyload" width="807" height="540" data-src="${CONFIG.BASE_IMAGE_URL}/images/medium/${this._data.pictureId}" alt="${this._data.pictureId}" />
         </div>
 
         <div class="detail__text ">
