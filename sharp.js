@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+// eslint-disable-next-line import/no-extraneous-dependencies
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
@@ -13,13 +13,13 @@ if (!fs.existsSync(destination)) {
 fs.readdirSync(target)
   .forEach((image) => {
     sharp(`${target}/${image}`)
-      .resize(800)
+      .resize(1400, 1000)
       .toFile(path.resolve(__dirname, `${destination}/${image.split('.')
         .slice(0, -1)
-        .join('.')}-large.jpg`));
+        .join('.')}-large.webp`));
     sharp(`${target}/${image}`)
-      .resize(480)
+      .resize(400, 800)
       .toFile(path.resolve(__dirname, `${destination}/${image.split('.')
         .slice(0, -1)
-        .join('.')}-small.jpg`));
+        .join('.')}-small.webp`));
   });
